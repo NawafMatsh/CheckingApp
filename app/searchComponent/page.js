@@ -11,7 +11,7 @@ export default function SearchBar() {
     const [DisplayPopUp, setDisplayPopUp] = useState(null);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("./Data.json")
       .then((res) => res.json())
       .then((json) => setData(json))
       .catch((err) => console.error("Error loading JSON:", err));
