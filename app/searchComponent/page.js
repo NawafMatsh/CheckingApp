@@ -32,8 +32,13 @@ export default function SearchBar() {
             setDisplayPopUp(true);
             }
     }
+    function handleDisplayPopUp() { 
+        if (DisplayPopUp) { 
+            setDisplayPopUp(false)
+        }
+    }
   return (
-      <div className="maindiv">
+    <div className="maindiv" onClick={handleDisplayPopUp}>
       <form className="form">
         <label>التحقق من تسجيل أسمك</label>
         <input
@@ -43,9 +48,11 @@ export default function SearchBar() {
           }}
           placeholder="بحث بالاسم أو رقم الهوية"
         ></input>
-        <button type="button" onClick={HandleSearchEvent}>بحث</button>
+        <button type="button" onClick={HandleSearchEvent}>
+          بحث
+        </button>
       </form>
-          <PopUpAlret isVisiable={DisplayPopUp} name={TheName} text={TheText}/>
+      <PopUpAlret isVisiable={DisplayPopUp} name={TheName} text={TheText} />
     </div>
   );
 }
